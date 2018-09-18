@@ -1,4 +1,6 @@
 import mensajeros.*
+import paquetes.*
+import destinos.*
 
 test "La mensajeria tiene a neo como empleado si lo agregarmos" {
 	mensajeria.contratar(neo)

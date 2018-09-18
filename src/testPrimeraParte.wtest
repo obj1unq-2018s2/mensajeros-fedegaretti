@@ -1,0 +1,19 @@
+import destinos.*
+import mensajeros.*
+import paquetes.*
+test "roberto" {
+	camion.cantAcoplados(1)
+	roberto.vehiculo(camion)
+	roberto.peso(90)
+	paquete.pagar()
+	paquete.destino(puenteBrooklyn)
+	assert.that(paquete.puedeSerEntregadoPor(roberto)
+	)
+
+}
+
+test "neo" {
+	neo.tieneCredito(true)
+	paquete.destino(matrix)
+	assert.equals(false, paquete.puedeSerEntregadoPor(neo))
+}
