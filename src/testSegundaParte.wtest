@@ -36,8 +36,5 @@ describe "Test de la segunda parte." {
 	test "peso del ultimo de la lista"{
 		assert.equals(chuckNorris.peso(),mensajeria.pesoUltimo())
 	}
-
-	
-
 }
 
