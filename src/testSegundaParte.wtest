@@ -1,0 +1,43 @@
+import destinos.*
+import mensajeros.*
+import paquetes.*
+
+describe "Test de la segunda parte." {
+
+	fixture {
+		mensajeria.contratar(neo)
+		mensajeria.contratar(roberto)
+		mensajeria.contratar(chuckNorris)
+	}
+
+	test "contratar" {
+		assert.that(mensajeria.mensajeros().size() == 3)
+	}
+
+	test "despedir" {
+		mensajeria.despedir(neo)
+		mensajeria.despedir(roberto)
+		mensajeria.despedir(chuckNorris)
+		assert.that(mensajeria.mensajeros().isEmpty())
+	}
+	test"despedir a todos"{
+		mensajeria.despedirATodos()
+		assert.that(mensajeria.mensajeros().isEmpty())
+	}
+	test "mensajeria grande"{
+		assert.that(mensajeria.mensajeriaGrande())
+	}
+	test "puede ser enviado por el primero de la lista"{
+		neo.tieneCredito(true)
+		paquete.pagar()
+		paquete.destino(matrix)
+		assert.that(mensajeria.puedeSerEntregadoPorPrimero())
+	}
+	test "peso del ultimo de la lista"{
+		assert.equals(chuckNorris.peso(),mensajeria.pesoUltimo())
+	}
+
+	
+
+}
+
